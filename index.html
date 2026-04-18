@@ -603,19 +603,6 @@
       fontFamily: "inherit",
     };
 
-    const inputStyle = {
-      width: "100%",
-      padding: "12px 14px",
-      border: "1px solid #4B5563",
-      background: "#1E3A42",
-      color: "#fff",
-      borderRadius: 8,
-      fontSize: 14,
-      marginBottom: 10,
-      fontFamily: "inherit",
-      boxSizing: "border-box",
-    };
-
     function MetricBlock({ label, value, hint }) {
       return (
         <div>
@@ -630,8 +617,6 @@
       const [step, setStep] = useState(0);
       const [answers, setAnswers] = useState({});
       const [showResult, setShowResult] = useState(false);
-      const [contact, setContact] = useState({ name: "", phone: "" });
-      const [submitted, setSubmitted] = useState(false);
 
       const result = useMemo(() => (showResult ? calculateResult(answers) : null), [showResult, answers]);
 
@@ -652,10 +637,7 @@
 
       const handleRestart = () => {
         setStep(0); setAnswers({}); setShowResult(false);
-        setSubmitted(false); setContact({ name: "", phone: "" });
       };
-
-      const handleSubmitContact = (e) => { e.preventDefault(); setSubmitted(true); };
 
       if (showResult && result) {
         const profileData = PROFILES[result.profile];
@@ -697,31 +679,16 @@
               )}
 
               <div style={{ padding: 24, background: BRAND_TEAL, borderRadius: 12, color: "#fff" }}>
-                {!submitted ? (
-                  <>
-                    <h3 style={{ margin: "0 0 8px", fontSize: 18, fontWeight: 500 }}>Want the full breakdown?</h3>
-                    <p style={{ margin: "0 0 20px", fontSize: 14, color: "#D1D5DB", lineHeight: 1.6 }}>
-                      I'll do a personalised walk-through of your numbers over 30 minute session — No sales pitch, no obligation.
-                    </p>
-                    <form onSubmit={handleSubmitContact}>
-                      <input type="text" placeholder="Your name" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required style={inputStyle} />
-                      <input type="tel" placeholder="WhatsApp number" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} required style={inputStyle} />
-                      <button type="submit" style={{ ...buttonBase, background: BRAND_GOLD, color: BRAND_TEAL, textAlign: "center", fontWeight: 500, marginTop: 4 }}>
-                        Send me my breakdown
-                      </button>
-                    </form>
-                    <p style={{ margin: "12px 0 0", fontSize: 11, color: "#9CA3AF", lineHeight: 1.5 }}>
-                      By submitting, you agree to be contacted by Bonz regarding your property planning. Your data isn't shared.
-                    </p>
-                  </>
-                ) : (
-                  <div style={{ padding: "8px 0" }}>
-                    <h3 style={{ margin: "0 0 8px", fontSize: 18, fontWeight: 500 }}>Got it, {contact.name.split(" ")[0]}.</h3>
-                    <p style={{ margin: 0, fontSize: 14, color: "#D1D5DB" }}>
-                      I'll send your personalised breakdown to {contact.phone} within 24 hours. If it's urgent, drop me a message directly — my number will come through with the report.
-                    </p>
-                  </div>
-                )}
+                <h3 style={{ margin: "0 0 8px", fontSize: 18, fontWeight: 500 }}>Want the full breakdown?</h3>
+                <p style={{ margin: "0 0 20px", fontSize: 14, color: "#D1D5DB", lineHeight: 1.6 }}>
+                  I'll do a personalised walk-through of your numbers over a 30 minute session — no sales pitch, no obligation.
+                </p>
+                <a
+                  href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))"
+                  style={{ ...buttonBase, display: "block", background: BRAND_GOLD, color: BRAND_TEAL, textAlign: "center", fontWeight: 600, textDecoration: "none", boxSizing: "border-box" }}
+                >
+                  Book my free consultation
+                </a>
               </div>
 
               <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid #E5E0D8", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13, color: "#6B7280" }}>
