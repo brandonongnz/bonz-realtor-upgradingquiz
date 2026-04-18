@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Are You Ready to Upgrade? | Bonz Realtor</title>
+  <meta name="description" content="Find out if you're financially ready to upgrade from your HDB. Get your personalised readiness score in 60 seconds." />
+
+  <!-- Google Fonts -->
+  <!-- Note: 'Test Tiempos Fine' (headers) is a commercial font.
+       Self-host it and update --font-header in style.css.
+       'Playfair Display' is used as a free fallback. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Italiana&family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+  <!-- ===========================
+       HEADER / NAV
+       =========================== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <div class="nav-logo">
+        <a href="index.html">Bonz Realtor</a>
+      </div>
+      <!-- <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+      </ul> -->
+      <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="nav-cta">Book a Call</a>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" aria-hidden="true">
+      <!-- <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+      </ul> -->
+      <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-primary">Book an Appointment</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===========================
+         UPGRADE READINESS QUIZ
+         =========================== -->
+    <section id="quiz" style="background:#F8F4EF; padding-top: 80px;">
+      <div id="quiz-root"></div>
+    </section>
+
+    <!-- ===========================
+         HERO
+         =========================== -->
+    <section class="hero" id="home">
+      <div class="container hero-container">
+
+        <div class="hero-content">
+          <h1 class="hero-title">Your Life's Work&nbsp;Deserves More&nbsp;Than Guesswork</h1>
+          <p class="hero-body">
+            Property is where your life's savings meet your future. That's why I bring deep research, 
+            real empathy, and sharp analysis to every property decision — so you move forward with clarity, not hope.
+          </p>
+          <div class="hero-actions">
+            <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-primary">Get Your Free Consultation</a>
+            <!-- <a href="about.html" class="btn btn-outline">Learn More</a> -->
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-image-frame">
+            <img
+              src="assets/hero-photo.jpg"
+              alt="Bonz — Licensed Real Estate Salesperson"
+              class="hero-image"
+            />
+          </div>
+          <!-- Decorative accent -->
+          <div class="hero-accent" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================
+         JNA PARTNERSHIP
+         =========================== -->
+    <section class="jna-section" id="jna">
+      <div class="container">
+
+        <div class="jna-intro">
+          <span class="jna-eyebrow">Backed by a leading divison</span>
+          <h2 class="jna-title">Proud Member of&nbsp;JNA Real Estate</h2>
+          <p class="jna-body">
+            As part of the JNA Real Estate family, I bring you the full support of one of Singapore's
+            most recognised real estate divisions under PropNex Realty — paired with the personal accountability of working
+            directly with me.
+          </p>
+          <a href="https://jnarealestate.sg" target="_blank" rel="noopener noreferrer" class="jna-logo-link" aria-label="Visit JNA Real Estate website">
+            <div class="jna-logo-badge">JNA Real Estate</div>
+          </a>
+        </div>
+
+        <!-- Update these numbers with real JNA figures when available -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-number">3000+</span>
+            <span class="metric-label">Homes Transacted</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number">260</span>
+            <span class="metric-label">Realtors & Staff</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number">19.56%</span>
+            <span class="metric-label">Avg. Return on Investment</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number">1000+</span>
+            <span class="metric-label">Investment Clients</span>
+          </div>
+        </div>
+
+        <div class="jna-cta">
+          <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-light">Book a Non-Obligatory Session</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================
+         TESTIMONIALS
+         =========================== -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-eyebrow">What Clients Say</span>
+          <h2 class="section-title">Real Stories, Real Results</h2>
+        </div>
+
+        <div class="reviews-grid">
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">EO</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Eugene O.</span>
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20" aria-label="Google review">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+            </div>
+            <p class="review-text">I had a great experience working with Brandon Ong (BONZ) in securing my new home. From the very beginning, Brandon was professional, responsive, and genuinely attentive to my needs. He took the time to understand what I was looking for and guided me through every step of the process with patience and clarity.</p>
+            <!-- <span class="review-date">3 weeks ago</span> -->
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">KM</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Ketan M.</span>
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20" aria-label="Google review">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+            </div>
+            <p class="review-text">What stood out most was his ability to not just meet our criteria, but exceed expectations by securing a property that checked all the boxes and came in well under the budget we had in mind. That balance of quality and value is rare.</p>
+            <p class="review-text">He was responsive, transparent, and proactive at every step, ensuring the entire process was smooth and stress-free. We always felt like he had our best interests at heart.</p>
+            <!-- <span class="review-date">1 month ago</span> -->
+          </div>
+
+          <!--
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">LP</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Linh P.</span>
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20" aria-label="Google review">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+            </div>
+            <p class="review-text">We sold our Tampines flat in under two weeks, above asking price. Bonz handled everything — from staging advice to negotiation. He was always reachable and kept us updated at every step. Highly recommend!</p>
+            <span class="review-date">2 months ago</span>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">JC</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">James C.</span>
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20" aria-label="Google review">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+            </div>
+            <p class="review-text">First-time buyer and I was completely overwhelmed. Bonz took the time to explain the whole process — CPF usage, stamp duties, OTP — without making me feel rushed. I felt genuinely guided, not sold to.</p>
+            <span class="review-date">2 months ago</span>
+          </div>
+          -->
+
+        </div>
+
+        <div class="reviews-more">
+          <a href="https://share.google/mncLCfyIGE3q5GWjv" target="_blank" rel="noopener noreferrer">See what other clients are saying →</a>
+        </div>
+
+        <div class="section-cta">
+          <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-primary">Book an Appointment</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================
+         SERVICES
+         =========================== -->
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-eyebrow">How I Can Help</span>
+          <h2 class="section-title">Services Tailored to Your Goals</h2>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                <path d="M22 5L5 18V39H17V28H27V39H39V18L22 5Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+                <path d="M29 11L37 4M37 4H30M37 4V11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Selling</h3>
+            <p class="service-body">
+              Achieve the best possible price with JNA's proven process - strategic marketing, precise pricing, quality viewing experience, and skilled negotiation.
+              I manage the entire process — from listing to keys handover — so you don't have to. 
+            </p>
+            <!-- <a href="services.html#selling" class="service-link">Find Out More <span aria-hidden="true">→</span></a> -->
+          </div>
+
+          <div class="service-card service-card--featured">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                <circle cx="17" cy="17" r="10" stroke="currentColor" stroke-width="1.75"/>
+                <path d="M24 24L40 40" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                <path d="M33 33L38 28" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Buying</h3>
+            <p class="service-body">
+              Find the right home at the right price. From financing, market research, to final negotiation,
+              I walk you through every step with no pressure and complete transparency.
+            </p>
+            <!-- <a href="services.html#buying" class="service-link">Find Out More <span aria-hidden="true">→</span></a> -->
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                <path d="M6 38H38" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                <path d="M9 38V26L18 17L26 23L38 10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="38" cy="10" r="3.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Investing</h3>
+            <p class="service-body">
+              Learn our 5-step investment process to build long-term wealth through Singapore property. I help you identify high-yield opportunities,
+              analyse capital appreciation, and structure your portfolio for sustainable growth.
+            </p>
+            <!-- <a href="services.html#investing" class="service-link">Find Out More <span aria-hidden="true">→</span></a> -->
+          </div>
+
+        </div>
+
+        <div class="section-cta">
+          <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-primary">I'm Ready</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================
+         BOOKING CTA BANNER
+         =========================== -->
+    <section class="booking" id="book">
+      <div class="container">
+        <div class="booking-content">
+          <span class="booking-eyebrow">Let's talk property</span>
+          <h2 class="booking-title">Ready to Make Your Move?</h2>
+          <p class="booking-body">
+            Book a no-obligation consultation. We'll map out your property goals and build a
+            plan that works for your timeline and budget.
+          </p>
+          <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-light btn-lg">Book an Appointment</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===========================
+       FOOTER
+       =========================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+
+      <div class="footer-brand">
+        <span class="footer-logo">Bonz Realtor</span>
+        <p>Licensed Real Estate Salesperson<br>Propnex Realty Pte Ltd</p>
+        <p class="footer-cea">CEA Reg. No. R072281D &nbsp;|&nbsp; Agency Licence No. L3008022J</p>
+      </div>
+
+      <!-- <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="analysis.html">Analysis</a></li>
+        </ul>
+      </div> -->
+
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <a href="tel:+6582254284">+65 8225 4284</a>
+        <a href="mailto:bonz.realtor@gmail.com">bonz.realtor@gmail.com</a>
+        <div class="social-links">
+          <a href="https://www.instagram.com/bonz.realtor/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+          <a href="https://www.linkedin.com/in/brandon-ong-a4716186/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 Bonz Realtor. All rights reserved. | Propnex Realty Pte Ltd | CEA Reg. No. R072281D | Agency Licence No. L3008022J</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script type="text/babel">
+    const { useState, useMemo } = React;
+
+    const BRAND_TEAL = "#2C4A52";
+    const BRAND_CREAM = "#F8F4EF";
+    const BRAND_GOLD = "#C9A961";
+
+    const fmt = (n) =>
+      new Intl.NumberFormat("en-SG", {
+        style: "currency",
+        currency: "SGD",
+        maximumFractionDigits: 0,
+      }).format(Math.max(0, Math.round(n)));
+
+    const QUESTIONS = [
+      {
+        id: "hdbValue",
+        label: "What's your HDB flat's estimated sale price today?",
+        helper: "Rough valuation is fine — you can refine this later.",
+        type: "choice",
+        options: [
+          { label: "Under $550k", value: 500000 },
+          { label: "$550k – $700k", value: 625000 },
+          { label: "$700k – $900k", value: 800000 },
+          { label: "$900k – $1.1M", value: 1000000 },
+          { label: "Above $1.1M", value: 1250000 },
+        ],
+      },
+      {
+        id: "outstandingLoan",
+        label: "Roughly how much do you still owe on your HDB loan?",
+        helper: "If you've fully paid off, select the first option.",
+        type: "choice",
+        options: [
+          { label: "Fully paid / almost fully paid", value: 0 },
+          { label: "Under $150k", value: 100000 },
+          { label: "$150k – $300k", value: 225000 },
+          { label: "$300k – $450k", value: 375000 },
+          { label: "Above $450k", value: 500000 },
+        ],
+      },
+      {
+        id: "yearsHeld",
+        label: "How long have you owned this flat?",
+        helper: "Used to estimate your CPF refund including accrued interest.",
+        type: "choice",
+        options: [
+          { label: "Less than 5 years (MOP not met)", value: 3, mopFlag: true },
+          { label: "5 – 8 years", value: 6 },
+          { label: "8 – 12 years", value: 10 },
+          { label: "12 – 18 years", value: 15 },
+          { label: "More than 18 years", value: 22 },
+        ],
+      },
+      {
+        id: "householdIncome",
+        label: "What's your combined monthly household income?",
+        helper: "Gross income before CPF. Used to calculate your maximum loan.",
+        type: "choice",
+        options: [
+          { label: "Under $12,000", value: 10000 },
+          { label: "$12,000 – $18,000", value: 15000 },
+          { label: "$18,000 – $25,000", value: 21500 },
+          { label: "$25,000 – $35,000", value: 30000 },
+          { label: "Above $35,000", value: 40000 },
+        ],
+      },
+      {
+        id: "timeline",
+        label: "When are you thinking of making the move?",
+        helper: "Be honest — this affects everything.",
+        type: "choice",
+        options: [
+          { label: "Within 6 months", value: 0.5, urgentFlag: true },
+          { label: "6 – 18 months", value: 1 },
+          { label: "1.5 – 3 years", value: 2 },
+          { label: "3+ years — still exploring", value: 4 },
+        ],
+      },
+      {
+        id: "situation",
+        label: "Which best describes your situation?",
+        helper: "Your life stage shapes the right strategy.",
+        type: "choice",
+        options: [
+          { label: "Couple, no kids yet", value: "couple" },
+          { label: "Planning for a child soon", value: "expanding" },
+          { label: "Family with young kids", value: "family" },
+          { label: "Empty nesters / right-sizing", value: "empty" },
+          { label: "Investor perspective primarily", value: "investor" },
+        ],
+      },
+    ];
+
+    function calculateResult(answers) {
+      const hdbValue = answers.hdbValue || 0;
+      const outstandingLoan = answers.outstandingLoan || 0;
+      const yearsHeld = answers.yearsHeld || 5;
+      const income = answers.householdIncome || 0;
+      const timeline = answers.timeline || 2;
+      const situation = answers.situation || "couple";
+
+      const mopNotMet = yearsHeld < 5;
+      const urgentTimeline = timeline <= 0.5;
+
+      const cpfPrincipalEstimate = hdbValue * 0.28;
+      const monthsHeld = yearsHeld * 12;
+      const cpfRefund = cpfPrincipalEstimate * Math.pow(1 + 0.025 / 12, monthsHeld);
+
+      const sellingCosts = hdbValue * 0.02;
+      const netEquity = Math.max(0, hdbValue - outstandingLoan - cpfRefund - sellingCosts + cpfPrincipalEstimate);
+      const cashProceeds = Math.max(0, hdbValue - outstandingLoan - cpfRefund - sellingCosts);
+      const cpfReturned = cpfRefund;
+
+      const tdsrCapacity = income * 0.55;
+      const stressRate = 0.045;
+      const loanTenure = 25;
+      const monthlyRate = stressRate / 12;
+      const numPayments = loanTenure * 12;
+      const maxLoan = tdsrCapacity * ((1 - Math.pow(1 + monthlyRate, -numPayments)) / monthlyRate);
+
+      const downpaymentCapacity = netEquity;
+      const affordabilityCeiling = Math.min(maxLoan / 0.75, downpaymentCapacity / 0.25);
+
+      let equityScore = 0;
+      if (netEquity >= 400000) equityScore = 40;
+      else if (netEquity >= 250000) equityScore = 30;
+      else if (netEquity >= 150000) equityScore = 20;
+      else if (netEquity >= 75000) equityScore = 10;
+      else equityScore = 3;
+
+      let loanScore = 0;
+      const totalBudget = maxLoan + netEquity;
+      if (totalBudget >= 1800000) loanScore = 30;
+      else if (totalBudget >= 1400000) loanScore = 24;
+      else if (totalBudget >= 1000000) loanScore = 17;
+      else if (totalBudget >= 700000) loanScore = 10;
+      else loanScore = 4;
+
+      let timingScore = 0;
+      if (timeline <= 0.5) timingScore = 10;
+      else if (timeline <= 1) timingScore = 20;
+      else if (timeline <= 2) timingScore = 18;
+      else timingScore = 10;
+
+      let profileScore = 0;
+      if (situation === "expanding" || situation === "family") profileScore = 10;
+      else if (situation === "investor") profileScore = 8;
+      else if (situation === "couple") profileScore = 7;
+      else profileScore = 6;
+
+      let rawScore = equityScore + loanScore + timingScore + profileScore;
+
+      const blockers = [];
+      if (mopNotMet) {
+        blockers.push({ type: "mop", severity: "hard", message: "Your flat hasn't met the 5-year Minimum Occupation Period yet. You cannot legally sell before MOP." });
+        rawScore = Math.min(rawScore, 35);
+      }
+      if (netEquity < 100000) {
+        blockers.push({ type: "equity", severity: "medium", message: "Your estimated net equity is below $100k. Most upgrade paths need more cushion for stamp duty, renovation, and contingency." });
+        rawScore = Math.min(rawScore, 45);
+      }
+      if (urgentTimeline && !mopNotMet) {
+        blockers.push({ type: "urgency", severity: "soft", message: "Your 6-month timeline is tight. A considered upgrade typically needs 9–15 months to execute well." });
+      }
+      if (outstandingLoan > hdbValue * 0.7) {
+        blockers.push({ type: "loan", severity: "medium", message: "Your outstanding loan is high relative to your flat's value. Equity headroom is limited." });
+        rawScore = Math.min(rawScore, 50);
+      }
+
+      let profile;
+      if (rawScore < 40) profile = "notYet";
+      else if (rawScore < 60) profile = "almost";
+      else if (rawScore < 80) profile = "ready";
+      else profile = "actNow";
+
+      return { score: Math.round(rawScore), profile, cashProceeds, cpfReturned, netEquity, maxLoan, affordabilityCeiling, blockers, inputs: { hdbValue, income, timeline, situation, yearsHeld } };
+    }
+
+    const PROFILES = {
+      notYet: {
+        label: "Not quite ready — but there's a plan",
+        color: "#A32D2D", bg: "#FCEBEB",
+        headline: "The numbers aren't there yet. That's okay — it means we plan properly.",
+        summary: "Rushing into an upgrade when the financial base isn't set is how people end up cash-strapped or overleveraged. Here's what's working against you right now, and what to do in the next 12 months.",
+      },
+      almost: {
+        label: "Almost ready — 1 or 2 things to sort first",
+        color: "#854F0B", bg: "#FAEEDA",
+        headline: "You're closer than you think. A few moves now and the door opens.",
+        summary: "Most of your fundamentals are in place. A couple of specific blockers are holding the upgrade back — fix those and you're in a strong position within 6–12 months.",
+      },
+      ready: {
+        label: "Ready to plan the move",
+        color: "#0C447C", bg: "#E6F1FB",
+        headline: "The window is open. Now it's about strategy, not whether to move.",
+        summary: "Your financial position supports an upgrade. The question shifts from 'can we?' to 'what's the smartest way?' — that's where the real value of good advice sits.",
+      },
+      actNow: {
+        label: "Strong position — move with confidence",
+        color: "#085041", bg: "#E1F5EE",
+        headline: "You're in a strong position. The cost of delay is likely higher than the cost of action.",
+        summary: "Your equity, income, and timing align. Most upgraders in this bracket who wait another 2 years end up paying more for a comparable or smaller unit. Let's talk about the specific move.",
+      },
+    };
+
+    const cardStyle = {
+      background: "#fff",
+      border: "1px solid #E5E0D8",
+      borderRadius: 16,
+      padding: "28px 32px",
+      fontFamily: "-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif",
+      color: "#1F2937",
+      lineHeight: 1.6,
+    };
+
+    const buttonBase = {
+      border: "none",
+      borderRadius: 10,
+      padding: "14px 20px",
+      fontSize: 15,
+      fontWeight: 500,
+      cursor: "pointer",
+      textAlign: "left",
+      width: "100%",
+      transition: "all 0.15s ease",
+      fontFamily: "inherit",
+    };
+
+    const inputStyle = {
+      width: "100%",
+      padding: "12px 14px",
+      border: "1px solid #4B5563",
+      background: "#1E3A42",
+      color: "#fff",
+      borderRadius: 8,
+      fontSize: 14,
+      marginBottom: 10,
+      fontFamily: "inherit",
+      boxSizing: "border-box",
+    };
+
+    function MetricBlock({ label, value, hint }) {
+      return (
+        <div>
+          <div style={{ fontSize: 12, color: "#6B7280", marginBottom: 4, fontWeight: 500 }}>{label}</div>
+          <div style={{ fontSize: 20, fontWeight: 500, color: BRAND_TEAL, marginBottom: 2, letterSpacing: "-0.01em" }}>{value}</div>
+          <div style={{ fontSize: 11, color: "#9CA3AF" }}>{hint}</div>
+        </div>
+      );
+    }
+
+    function UpgradeReadinessQuiz() {
+      const [step, setStep] = useState(0);
+      const [answers, setAnswers] = useState({});
+      const [showResult, setShowResult] = useState(false);
+      const [contact, setContact] = useState({ name: "", phone: "" });
+      const [submitted, setSubmitted] = useState(false);
+
+      const result = useMemo(() => (showResult ? calculateResult(answers) : null), [showResult, answers]);
+
+      const total = QUESTIONS.length;
+      const progress = showResult ? 100 : Math.round((step / total) * 100);
+
+      const handleAnswer = (qid, value) => {
+        const next = { ...answers, [qid]: value };
+        setAnswers(next);
+        if (step < total - 1) {
+          setTimeout(() => setStep(step + 1), 120);
+        } else {
+          setTimeout(() => setShowResult(true), 120);
+        }
+      };
+
+      const handleBack = () => { if (step > 0) setStep(step - 1); };
+
+      const handleRestart = () => {
+        setStep(0); setAnswers({}); setShowResult(false);
+        setSubmitted(false); setContact({ name: "", phone: "" });
+      };
+
+      const handleSubmitContact = (e) => { e.preventDefault(); setSubmitted(true); };
+
+      if (showResult && result) {
+        const profileData = PROFILES[result.profile];
+        return (
+          <div style={{ maxWidth: 680, margin: "0 auto", padding: "24px 16px 40px", background: BRAND_CREAM }}>
+            <div style={cardStyle}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: BRAND_TEAL, fontWeight: 500 }}>
+                Your readiness score
+              </div>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 16, margin: "8px 0 4px" }}>
+                <span style={{ fontSize: 72, fontWeight: 500, color: BRAND_TEAL, lineHeight: 1 }}>{result.score}</span>
+                <span style={{ fontSize: 22, color: "#6B7280" }}>/ 100</span>
+              </div>
+              <div style={{ display: "inline-block", background: profileData.bg, color: profileData.color, padding: "6px 14px", borderRadius: 999, fontSize: 13, fontWeight: 500, marginTop: 8, marginBottom: 24 }}>
+                {profileData.label}
+              </div>
+              <h2 style={{ fontSize: 22, fontWeight: 500, color: BRAND_TEAL, margin: "0 0 12px", lineHeight: 1.35 }}>{profileData.headline}</h2>
+              <p style={{ fontSize: 15, color: "#4B5563", margin: "0 0 28px" }}>{profileData.summary}</p>
+
+              <div style={{ background: BRAND_CREAM, borderRadius: 12, padding: 20, marginBottom: 24 }}>
+                <div style={{ fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280", fontWeight: 500, marginBottom: 16 }}>Your estimated numbers</div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+                  <MetricBlock label="Cash in hand after sale" value={fmt(result.cashProceeds)} hint="After loan & CPF refund" />
+                  <MetricBlock label="CPF returned to OA" value={fmt(result.cpfReturned)} hint="Reusable for next home" />
+                  <MetricBlock label="Max loan capacity" value={fmt(result.maxLoan)} hint="At 55% TDSR, 4.5% stress" />
+                  <MetricBlock label="Realistic budget ceiling" value={fmt(result.affordabilityCeiling)} hint="Indicative, not guaranteed" />
+                </div>
+              </div>
+
+              {result.blockers.length > 0 && (
+                <div style={{ marginBottom: 28 }}>
+                  <div style={{ fontSize: 12, letterSpacing: "0.08em", textTransform: "uppercase", color: "#6B7280", fontWeight: 500, marginBottom: 12 }}>What to watch</div>
+                  {result.blockers.map((b, i) => (
+                    <div key={i} style={{ padding: "12px 16px", background: b.severity === "hard" ? "#FCEBEB" : "#FAEEDA", borderLeft: `3px solid ${b.severity === "hard" ? "#A32D2D" : "#BA7517"}`, borderRadius: 6, marginBottom: 10, fontSize: 14, color: b.severity === "hard" ? "#791F1F" : "#633806" }}>
+                      {b.message}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div style={{ padding: 24, background: BRAND_TEAL, borderRadius: 12, color: "#fff" }}>
+                {!submitted ? (
+                  <>
+                    <h3 style={{ margin: "0 0 8px", fontSize: 18, fontWeight: 500 }}>Want the full breakdown?</h3>
+                    <p style={{ margin: "0 0 20px", fontSize: 14, color: "#D1D5DB", lineHeight: 1.6 }}>
+                      I'll send a personalised PDF walk-through of your numbers over WhatsApp — including specific districts and unit types that fit your budget. No sales pitch, no obligation.
+                    </p>
+                    <form onSubmit={handleSubmitContact}>
+                      <input type="text" placeholder="Your name" value={contact.name} onChange={(e) => setContact({ ...contact, name: e.target.value })} required style={inputStyle} />
+                      <input type="tel" placeholder="WhatsApp number" value={contact.phone} onChange={(e) => setContact({ ...contact, phone: e.target.value })} required style={inputStyle} />
+                      <button type="submit" style={{ ...buttonBase, background: BRAND_GOLD, color: BRAND_TEAL, textAlign: "center", fontWeight: 500, marginTop: 4 }}>
+                        Send me my breakdown
+                      </button>
+                    </form>
+                    <p style={{ margin: "12px 0 0", fontSize: 11, color: "#9CA3AF", lineHeight: 1.5 }}>
+                      By submitting, you agree to be contacted by Bonz regarding your property planning. Your data isn't shared.
+                    </p>
+                  </>
+                ) : (
+                  <div style={{ padding: "8px 0" }}>
+                    <h3 style={{ margin: "0 0 8px", fontSize: 18, fontWeight: 500 }}>Got it, {contact.name.split(" ")[0]}.</h3>
+                    <p style={{ margin: 0, fontSize: 14, color: "#D1D5DB" }}>
+                      I'll send your personalised breakdown to {contact.phone} within 24 hours. If it's urgent, drop me a message directly — my number will come through with the report.
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid #E5E0D8", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 13, color: "#6B7280" }}>
+                <button onClick={handleRestart} style={{ background: "none", border: "none", color: BRAND_TEAL, cursor: "pointer", fontSize: 13, textDecoration: "underline", padding: 0, fontFamily: "inherit" }}>
+                  Retake the quiz
+                </button>
+                <span style={{ fontSize: 11 }}>Estimates only. Actual figures require a full consultation.</span>
+              </div>
+            </div>
+            <div style={{ textAlign: "center", marginTop: 16, fontSize: 11, color: "#9CA3AF" }}>
+              Bonz · PropNex / JNA Real Estate · CEA R072281D
+            </div>
+          </div>
+        );
+      }
+
+      const q = QUESTIONS[step];
+      return (
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "24px 16px 40px", background: BRAND_CREAM }}>
+          <div style={cardStyle}>
+            <div style={{ marginBottom: 28 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8, fontSize: 12, color: "#6B7280", letterSpacing: "0.05em" }}>
+                <span>Question {step + 1} of {total}</span>
+                <span>{progress}%</span>
+              </div>
+              <div style={{ height: 4, background: "#E5E0D8", borderRadius: 2, overflow: "hidden" }}>
+                <div style={{ height: "100%", width: `${progress}%`, background: BRAND_TEAL, transition: "width 0.3s ease" }} />
+              </div>
+            </div>
+
+            <h2 style={{ fontSize: 22, fontWeight: 500, color: BRAND_TEAL, margin: "0 0 8px", lineHeight: 1.35 }}>{q.label}</h2>
+            {q.helper && <p style={{ fontSize: 14, color: "#6B7280", margin: "0 0 24px" }}>{q.helper}</p>}
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {q.options.map((opt) => {
+                const selected = answers[q.id] === opt.value;
+                return (
+                  <button
+                    key={opt.label}
+                    onClick={() => handleAnswer(q.id, opt.value)}
+                    onMouseEnter={(e) => { if (!selected) e.currentTarget.style.background = "#F8F4EF"; }}
+                    onMouseLeave={(e) => { if (!selected) e.currentTarget.style.background = "#fff"; }}
+                    style={{ ...buttonBase, background: selected ? BRAND_TEAL : "#fff", color: selected ? "#fff" : "#1F2937", border: selected ? `1px solid ${BRAND_TEAL}` : "1px solid #E5E0D8" }}
+                  >
+                    {opt.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {step > 0 && (
+              <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid #E5E0D8" }}>
+                <button onClick={handleBack} style={{ background: "none", border: "none", color: "#6B7280", cursor: "pointer", fontSize: 13, padding: 0, fontFamily: "inherit" }}>
+                  ← Back
+                </button>
+              </div>
+            )}
+          </div>
+          <div style={{ textAlign: "center", marginTop: 16, fontSize: 11, color: "#9CA3AF" }}>
+            Takes about 60 seconds · No sign-up required for your score
+          </div>
+        </div>
+      );
+    }
+
+    const quizRoot = ReactDOM.createRoot(document.getElementById("quiz-root"));
+    quizRoot.render(<UpgradeReadinessQuiz />);
+  </script>
+</body>
+</html>
