@@ -429,6 +429,19 @@
         ],
       },
       {
+        id: "cpfPrincipal",
+        label: "How much CPF (principal only) have you used for this flat?",
+        helper: "Check your CPF statement under 'My Statement → Property'. Principal only — not including accrued interest.",
+        type: "choice",
+        options: [
+          { label: "Under $100k", value: 75000 },
+          { label: "$100k – $200k", value: 150000 },
+          { label: "$200k – $300k", value: 250000 },
+          { label: "$300k+", value: 350000 },
+          { label: "Not sure", value: "unknown" },
+        ],
+      },
+      {
         id: "householdIncome",
         label: "What's your combined monthly household income?",
         helper: "Gross income before CPF. Used to calculate your maximum loan.",
@@ -479,12 +492,22 @@
       const mopNotMet = yearsHeld < 5;
       const urgentTimeline = timeline <= 0.5;
 
-      const cpfPrincipalEstimate = hdbValue * 0.28;
+      const cpfPrincipalAnswer = answers.cpfPrincipal;
+      let cpfPrincipalEstimate;
+      if (!cpfPrincipalAnswer || cpfPrincipalAnswer === "unknown") {
+        if (yearsHeld <= 3) cpfPrincipalEstimate = hdbValue * 0.15;
+        else if (yearsHeld <= 6) cpfPrincipalEstimate = hdbValue * 0.22;
+        else if (yearsHeld <= 10) cpfPrincipalEstimate = hdbValue * 0.28;
+        else if (yearsHeld <= 15) cpfPrincipalEstimate = hdbValue * 0.30;
+        else cpfPrincipalEstimate = hdbValue * 0.32;
+      } else {
+        cpfPrincipalEstimate = cpfPrincipalAnswer;
+      }
       const monthsHeld = yearsHeld * 12;
       const cpfRefund = cpfPrincipalEstimate * Math.pow(1 + 0.025 / 12, monthsHeld);
 
       const sellingCosts = hdbValue * 0.02;
-      const netEquity = Math.max(0, hdbValue - outstandingLoan - cpfRefund - sellingCosts + cpfPrincipalEstimate);
+      const netEquity = Math.max(0, hdbValue - outstandingLoan - sellingCosts);
       const cashProceeds = Math.max(0, hdbValue - outstandingLoan - cpfRefund - sellingCosts);
       const cpfReturned = cpfRefund;
 
