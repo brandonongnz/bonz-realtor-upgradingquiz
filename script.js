@@ -2,6 +2,35 @@
    BONZ REALTOR — script.js
    ============================================================ */
 
+// ── BOOKING CTA ───────────────────────────────────────────────
+// Global so it's callable from href="javascript:openBooking()"
+function openBooking() {
+  if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
+  window.open(
+    'https://form.jotform.com/261051376816053',
+    '_blank',
+    'scrollbars=yes,toolbar=no,width=700,height=500'
+  );
+}
+
+// ── JOTFORM SUBMISSION → LEAD EVENT ──────────────────────────
+// JotForm sends a postMessage to the opener tab when the form
+// is submitted successfully. We listen for it and fire Lead.
+window.addEventListener('message', function (event) {
+  if (typeof event.data !== 'string') return;
+  try {
+    var data = JSON.parse(event.data);
+    var isJotForm = (
+      (event.origin && event.origin.includes('jotform.com')) ||
+      data.formID === '261051376816053' ||
+      data.action === 'submission-completed'
+    );
+    if (isJotForm && (data.action === 'submission-completed' || data.type === 'submission')) {
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    }
+  } catch (e) {}
+});
+
 (function () {
   'use strict';
 

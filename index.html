@@ -17,6 +17,24 @@
 
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1067057533159031');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1067057533159031&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -37,7 +55,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="analysis.html">Analysis</a></li>
       </ul> -->
-      <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="nav-cta">Book a Call</a>
+      <a href="javascript:openBooking()" class="nav-cta">Book a Call</a>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -51,7 +69,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="analysis.html">Analysis</a></li>
       </ul> -->
-      <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-primary">Book an Appointment</a>
+      <a href="javascript:openBooking()" class="btn btn-primary">Book an Appointment</a>
     </div>
   </header>
 
@@ -77,7 +95,7 @@
             real empathy, and sharp analysis to every property decision — so you move forward with clarity, not hope.
           </p>
           <div class="hero-actions">
-            <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-primary">Get Your Free Consultation</a>
+            <a href="javascript:openBooking()" class="btn btn-primary">Get Your Free Consultation</a>
             <!-- <a href="about.html" class="btn btn-outline">Learn More</a> -->
           </div>
         </div>
@@ -137,7 +155,7 @@
         </div>
 
         <div class="jna-cta">
-          <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-light">Book a Non-Obligatory Session</a>
+          <a href="javascript:openBooking()" class="btn btn-light">Book a Non-Obligatory Session</a>
         </div>
 
       </div>
@@ -238,7 +256,7 @@
         </div>
 
         <div class="section-cta">
-          <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-primary">Book an Appointment</a>
+          <a href="javascript:openBooking()" class="btn btn-primary">Book an Appointment</a>
         </div>
 
       </div>
@@ -307,7 +325,7 @@
         </div>
 
         <div class="section-cta">
-          <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-primary">I'm Ready</a>
+          <a href="javascript:openBooking()" class="btn btn-primary">I'm Ready</a>
         </div>
 
       </div>
@@ -325,7 +343,7 @@
             Book a no-obligation consultation. We'll map out your property goals and build a
             plan that works for your timeline and budget.
           </p>
-          <a href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))" class="btn btn-light btn-lg">Book an Appointment</a>
+          <a href="javascript:openBooking()" class="btn btn-light btn-lg">Book an Appointment</a>
         </div>
       </div>
     </section>
@@ -708,7 +726,7 @@
                   I'll do a personalised walk-through of your numbers over a 30 minute session — no sales pitch, no obligation.
                 </p>
                 <a
-                  href="javascript:void(window.open('https://form.jotform.com/261051376816053','blank','scrollbars=yes,toolbar=no,width=700,height=500'))"
+                  href="javascript:openBooking()"
                   style={{ ...buttonBase, display: "block", background: BRAND_GOLD, color: BRAND_TEAL, textAlign: "center", fontWeight: 600, textDecoration: "none", boxSizing: "border-box" }}
                 >
                   Book my free consultation
