@@ -561,7 +561,7 @@
         rawScore = Math.min(rawScore, 45);
       }
       if (urgentTimeline && !mopNotMet) {
-        blockers.push({ type: "urgency", severity: "soft", message: "Your 6-month timeline is tight. A considered upgrade typically needs 9–15 months to execute well." });
+        blockers.push({ type: "urgency", severity: "soft", message: "Your 6-month timeline might be tight, but still workable if executed well." });
       }
       if (outstandingLoan > hdbValue * 0.7) {
         blockers.push({ type: "loan", severity: "medium", message: "Your outstanding loan is high relative to your flat's value. Equity headroom is limited." });
@@ -719,7 +719,7 @@
                 <button onClick={handleRestart} style={{ background: "none", border: "none", color: BRAND_TEAL, cursor: "pointer", fontSize: 13, textDecoration: "underline", padding: 0, fontFamily: "inherit" }}>
                   Retake the quiz
                 </button>
-                <span style={{ fontSize: 11 }}>Estimates only, with a few general assumptions. Actual figures and plan require a full consultation.</span>
+                <span style={{ fontSize: 11 }}>Estimates only, with assumptions. Actual figures require a full consultation.</span>
               </div>
             </div>
             <div style={{ textAlign: "center", marginTop: 16, fontSize: 11, color: "#9CA3AF" }}>
