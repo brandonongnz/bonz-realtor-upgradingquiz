@@ -453,6 +453,138 @@ button {
 }
 
 /* ============================================================
+   STORY ARC (EMOTIONAL NARRATIVE)
+   ============================================================ */
+.story-arc {
+  background-color: var(--cream);
+  padding-top: calc(var(--header-height) + 64px);
+  padding-bottom: var(--section-v);
+}
+
+.story-header {
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+  margin-bottom: 72px;
+}
+
+.story-title {
+  font-family: var(--font-header);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--teal);
+  line-height: 1.2;
+}
+
+.story-block {
+  display: flex;
+  align-items: center;
+  gap: clamp(36px, 6vw, 90px);
+}
+
+.story-block + .story-block {
+  margin-top: var(--section-v);
+}
+
+.story-block--reverse {
+  flex-direction: row-reverse;
+}
+
+.story-image-wrap {
+  flex: 0 0 auto;
+  width: 40%;
+  max-width: 400px;
+}
+
+.story-image {
+  width: 100%;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  background-color: var(--sage-subtle);
+}
+
+.story-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.story-text p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(38, 70, 83, 0.78);
+  line-height: 1.8;
+}
+
+.story-text p + p {
+  margin-top: 18px;
+}
+
+.story-text .story-quote {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--teal);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding-left: 18px;
+  border-left: 3px solid var(--coral);
+}
+
+.story-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.story-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--teal);
+  font-size: 1rem;
+}
+
+.story-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--coral);
+}
+
+/* ============================================================
+   STORY SEGUE (MISSION STATEMENT BRIDGE)
+   ============================================================ */
+.story-segue {
+  background-color: var(--teal);
+  padding-block: 84px;
+}
+
+.story-segue .container {
+  max-width: 840px;
+  text-align: center;
+}
+
+.story-segue-text {
+  font-family: var(--font-header);
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.45;
+}
+
+.story-segue-text em {
+  font-family: var(--font-quote);
+  font-style: italic;
+  color: var(--sage);
+}
+
+/* ============================================================
    JNA PARTNERSHIP SECTION
    ============================================================ */
 .jna-section {
@@ -946,6 +1078,10 @@ button {
     gap: 48px;
   }
 
+  .story-image-wrap {
+    width: 46%;
+  }
+
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -975,6 +1111,30 @@ button {
   }
   .hamburger {
     display: flex;
+  }
+
+  /* Story arc */
+  .story-arc {
+    padding-top: calc(var(--header-height) + 40px);
+  }
+  .story-header {
+    margin-bottom: 48px;
+  }
+  .story-block,
+  .story-block--reverse {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+  }
+  .story-image-wrap {
+    width: 100%;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+
+  /* Story segue */
+  .story-segue {
+    padding-block: 56px;
   }
 
   /* Hero */
