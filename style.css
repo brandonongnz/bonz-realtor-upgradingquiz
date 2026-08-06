@@ -943,6 +943,48 @@ button {
 }
 
 /* ============================================================
+   ABOUT ME
+   ============================================================ */
+.about-section {
+  background-color: var(--white);
+  padding-block: var(--section-v);
+}
+
+.about-image-wrap--circle {
+  width: 32%;
+  max-width: 300px;
+}
+
+.story-image.about-image--circle {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: var(--sage-subtle);
+  box-shadow: 0 0 0 10px var(--sage-subtle), var(--shadow-md);
+}
+
+.story-image.about-image--headshot {
+  object-position: center 30%;
+}
+
+.about-badge {
+  max-width: 260px;
+  margin: 32px auto;
+  text-align: center;
+}
+
+.about-badge-image {
+  width: 100%;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  transform: rotate(-3deg);
+  transition: transform var(--t);
+}
+.about-badge-image:hover {
+  transform: rotate(0deg);
+}
+
+/* ============================================================
    BOOKING CTA BANNER
    ============================================================ */
 .booking {
