@@ -794,6 +794,26 @@ button {
   flex-shrink: 0;
 }
 
+.chat-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.chat-proof-image {
+  width: 100%;
+  border-radius: var(--r-md);
+  border: 1px solid rgba(38, 70, 83, 0.06);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t), box-shadow var(--t);
+}
+.chat-proof-image:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
 .reviews-more {
   text-align: center;
   margin-top: 28px;
@@ -1202,6 +1222,12 @@ button {
   /* Reviews */
   .reviews-grid {
     grid-template-columns: 1fr;
+  }
+  .chat-proof-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+    margin-top: 20px;
   }
 
   /* Services */
