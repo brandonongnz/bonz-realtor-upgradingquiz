@@ -557,6 +557,20 @@ button {
   background-color: var(--coral);
 }
 
+.story-closing {
+  max-width: 780px;
+  margin: var(--section-v) auto 0;
+  text-align: center;
+}
+
+.story-closing p {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  color: var(--teal);
+  line-height: 1.55;
+}
+
 /* ============================================================
    STORY SEGUE (MISSION STATEMENT BRIDGE)
    ============================================================ */
@@ -1130,6 +1144,9 @@ button {
     width: 100%;
     max-width: 340px;
     margin-inline: auto;
+  }
+  .story-closing {
+    margin-top: var(--section-v-sm);
   }
 
   /* Story segue */
