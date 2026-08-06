@@ -706,6 +706,17 @@ button {
   text-transform: uppercase;
 }
 
+.jna-process {
+  max-width: 860px;
+  margin: 0 auto 56px;
+}
+
+.jna-process-image {
+  width: 100%;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+}
+
 .jna-cta {
   text-align: center;
 }
