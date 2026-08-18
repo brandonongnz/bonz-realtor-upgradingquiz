@@ -716,6 +716,16 @@ button {
   box-shadow: var(--shadow-lg);
 }
 
+.jna-process-note {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(253, 247, 221, 0.7);
+  line-height: 1.75;
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 40px;
+}
+
 .jna-cta {
   text-align: center;
 }
