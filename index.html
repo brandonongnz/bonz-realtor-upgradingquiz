@@ -35,9 +35,11 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
+  <!-- React/ReactDOM/Babel: only needed for the Upgrade Readiness Quiz (hidden — kept in place, not deleted)
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  -->
 </head>
 <body>
 
@@ -445,7 +447,9 @@
 
     <!-- ===========================
          UPGRADE READINESS QUIZ
+         (hidden — kept in place, not deleted)
          =========================== -->
+    <!--
     <section id="quiz" style="background:#F8F4EF; padding-block: var(--section-v);">
       <div class="quiz-intro">
         <span class="section-eyebrow">Free Assessment</span>
@@ -454,6 +458,7 @@
       </div>
       <div id="quiz-root"></div>
     </section>
+    -->
 
     <!-- ===========================
          BOOKING CTA BANNER
@@ -516,6 +521,7 @@
 
   <script src="script.js"></script>
 
+  <!-- Upgrade Readiness Quiz (hidden — kept in place, not deleted)
   <script type="text/babel">
     const { useState, useMemo } = React;
 
@@ -923,5 +929,6 @@
     const quizRoot = ReactDOM.createRoot(document.getElementById("quiz-root"));
     quizRoot.render(<UpgradeReadinessQuiz />);
   </script>
+  -->
 </body>
 </html>
